@@ -446,7 +446,7 @@ $(function() {
 		_html+='<p>すべての統計データが網羅されていないため、重症化率に限り正しく計算されないことがあります。</p>';
 		_html+='<p>当フォームに入力された内容はサーバー並びにcookie等に保管されません。</p>';
 		_html+='<p>&copy;<a href="https://neet.co.jp/">NEET Co.,Ltd.</a> All Right Reserved.</p>';
-		_html+='<p>This is open source. <a href="https://github.com/nanakochi123456/">github source</a></p>';
+		_html+='<p>This is open source. <a href="https://github.com/nanakochi123456/covid19-checker">github source</a></p>';
 
 		$(HTML).append(_html);
 		// </以下変更禁止> ここまで
