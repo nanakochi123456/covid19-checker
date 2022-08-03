@@ -45,10 +45,10 @@
 # その他
 
 - CSSにつきましては無制限に自由に書き換えて構いません
-- CSSにはsanitizeあたりが必要そうです。
+- sassコンパイラが必要です
+- CSSにはsanitizeあたりが必要そうです。scssにリネームしてコンパイルして下さい。
 - https://github.com/csstools/sanitize.css
 - 拡張子 sjs は js にリネームすればそのまま動きます。
-- sassコンパイラが必要です
 
 
 by @nanakochi123456 なのたん
