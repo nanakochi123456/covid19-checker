@@ -144,7 +144,7 @@ $(function() {
 				result += "あなたは受診の必要はあります。<br>早急に「かかりつけ医」か「近くの医療機関」に電話連絡した上で、診断してもらうことをお薦めします。<br>連絡なしに直接医療機関にかかることはお避け下さい。<br>";
 				result += '<br>';
 			}
-			result += '参考までに、あなたの重症化リスクは健康な成人30代男性（血液型O型、飲酒喫煙なし）のおよそ' + jusyo + '倍です。<br>';
+			result += '参考までに、あなたの重症化リスクは健康な成人30代女性（血液型O型、飲酒喫煙なし、妊娠なし）のおよそ' + jusyo + '倍です。<br>';
 			result += '<br>';
 
 			if(year[3] < 20) {
@@ -155,8 +155,8 @@ $(function() {
 				result += '発熱を抑える為に<a href="https://px.a8.net/svt/ejp?a8mat=1U3OQS+5R7ZF6+249K+BWGDT&a8ejpredirect=https%3A%2F%2Fwww.amazon.co.jp%2Fs%3Fk%3D%25E3%2583%25AD%25E3%2582%25AD%25E3%2582%25BD%25E3%2583%258B%25E3%2583%25B3%25E3%2583%2597%25E3%2583%25AC%25E3%2583%259F%25E3%2582%25A2%25E3%2583%25A0%26__mk_ja_JP%3D%25E3%2582%25AB%25E3%2582%25BF%25E3%2582%25AB%25E3%2583%258A%26crid%3DFKXS0U0DUYEB%26sprefix%3D%25E3%2583%25AD%25E3%2582%25AD%25E3%2582%25BD%25E3%2583%258B%25E3%2583%25B3%25E3%2583%2597%25E3%2583%25AC%25E3%2583%259F%25E3%2582%25A2%25E3%2583%25A0%252Caps%252C168%26ref%3Dnb_sb_noss_1%26tag%3Da8-affi-315334-22" rel="nofollow">ロキソニン</a>（ロキソプロフェン）、<a href="https://px.a8.net/svt/ejp?a8mat=1U3OQS+5R7ZF6+249K+BWGDT&a8ejpredirect=https%3A%2F%2Fwww.amazon.co.jp%2Fs%3Fk%3D%25E3%2582%25A4%25E3%2583%2596%26__mk_ja_JP%3D%25E3%2582%25AB%25E3%2582%25BF%25E3%2582%25AB%25E3%2583%258A%26crid%3DTIBV5UW1M7I1%26sprefix%3D%25E3%2582%25A4%25E3%2583%2596%252Caps%252C207%26ref%3Dnb_sb_noss_1%26tag%3Da8-affi-315334-22" rel="nofollow">イブ</a>（イブプロフェン）を準備するとよいでしょう。<br>';
 			}
 
-			// 40歳以上パルスオキシメーター＆多分jusyo>15
-			if(year[3] >= 40 || jusyo > 15) {
+			// 40歳以上パルスオキシメーター＆多分jusyo>20
+			if(year[3] >= 40 || jusyo > 20) {
 				result += '重症化リスクも高くなる可能性もありますので、酸素飽和度を計測する<a href="https://px.a8.net/svt/ejp?a8mat=1U3OQS+5R7ZF6+249K+BWGDT&a8ejpredirect=https%3A%2F%2Fwww.amazon.co.jp%2Fs%3Fk%3D%25E3%2583%2591%25E3%2583%25AB%25E3%2582%25B9%25E3%2582%25AA%25E3%2582%25AD%25E3%2582%25B7%25E3%2583%25A1%25E3%2583%25BC%25E3%2582%25BF%25E3%2583%25BC%26__mk_ja_JP%3D%25E3%2582%25AB%25E3%2582%25BF%25E3%2582%25AB%25E3%2583%258A%26crid%3D30PSSI9Z0GHVV%26sprefix%3D%25E3%2583%2591%25E3%2583%25AB%25E3%2582%25B9%25E3%2582%25AA%25E3%2582%25AD%25E3%2582%25B7%25E3%2583%25A1%25E3%2583%25BC%25E3%2582%25BF%25E3%2583%25BC%252Caps%252C156%26ref%3Dnb_sb_noss_1%26tag%3Da8-affi-315334-22" rel="nofollow">パルスオキシメーター</a>も準備しましょう。<br>';
 			}
 
@@ -313,10 +313,12 @@ $(function() {
 		// 3番目 重症化の率
 		// 4番目 パラメータ番号
 
+		// 男性の死亡率
+		// https://news.yahoo.co.jp/byline/kutsunasatoshi/20210516-00236991
 		// 妊婦の重症化率
 		// https://minerva-clinic.or.jp/covid-19/pregnancy/icu/
 		inslist(HTML, "sex", "性別"
-			, "0-0-1-1=男性"
+			, "0-0-1.4-1=男性"
 			, "0-0-1-2=女性（妊婦ではない）"
 			, "1-0-1.62-3=女性（妊婦）"
 		);
