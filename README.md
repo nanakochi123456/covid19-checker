@@ -50,5 +50,9 @@
 - https://github.com/csstools/sanitize.css
 - 拡張子 sjs は js にリネームすればそのまま動きます。
 
+# お問い合わせ
 
-by @nanakochi123456 なのたん
+- https://blog.neet.co.jp/contact/ こちらよりお願いします。
+- 利用承諾に関してのお問い合わせについては返答致しませんが、ご利用報告をしていただければ作者が号泣して喜びます。
+
+by @nanakochi123456 なのたん (C)NEET co.,ltd.
