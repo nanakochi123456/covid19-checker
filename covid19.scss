@@ -160,7 +160,7 @@ h1 {
 			div:nth-child(2) {
 				display: table-cell;
 				border-top: 1px solid #d90606;
-				width: calc(100vw - 300px);
+				width: calc(100vw - 450px);
 			}
 		}
 	}
@@ -172,10 +172,14 @@ h1 {
 
 			/* Label */
 			div:nth-child(1) {
+				margin: 0;
+				padding: 0;
 				font-weight: bold;
 				border-top: 1px solid #d90606;
 			}
 			div:nth-child(2) {
+				margin: 0;
+				padding: 0;
 			}
 		}
 	}
@@ -188,4 +192,27 @@ h1 {
 
 .result {
 	font-weight: bold;
+}
+
+
+input[type="number"] {
+	margin: 0;
+	padding: 0;
+	font-size: 20px;
+	text-align: right;
+	width: 80px;
+}
+
+select {
+	margin: 0;
+	padding: 0;
+	font-size: 20px;
+}
+
+input[type=checkbox] {
+	width: 18px;
+	height: 18px;
+	transform: scale(1.2);
+	border-radius: 3px;
+	margin-right: 10px;
 }
