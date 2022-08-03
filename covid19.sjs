@@ -110,33 +110,42 @@ $(function() {
 			if(kyukyu > 0) {
 				result += 'あなたは緊急の状態です。ただちに <a href="tel:119">119</a>に電話の上治療してもらうことをお薦めします。<br>';
 				result += 'なお、ただいま病院はひっ迫していますのですぐに受け入れ先の病院がすぐに決まるとは限りません。<br>';
-
+				result += '<br>';
 
 			// 抗原検査キットの値が不明
 			} else if(kougen[0] == 1) {
 				result += "あなたは受診の必要はあります。<br>";
 				result += "もう一度抗原検査キットを試してみて、もしだめなら…<br>もしくは抗原検査キットの使用方法がわからなければ、医療機関に検査を依頼しましょう。<br>";
+				result += '<br>';
 				result += "「かかりつけ医」か「近くの医療機関」に電話連絡した上で、抗原検査キットの使い方がわからない旨も連絡し、検査してもらうことをお薦めします。<br>連絡なしに直接医療機関にかかることはお避け下さい。<br>";
 				result += "無症状かつ濃厚接触の疑いがある場合は、自治体や街の無料PCR検査を活用しましょう。<br>";
+				result += '<br>';
 
 				/* 大阪府対応 */
 				if(kyukyu == 0 && year[3] <= 40 && sex[3] < 3) {
 					result += '大阪府居住の方は<a href="https://www.pref.osaka.lg.jp/kansenshoshien/jitaku_ryouyou/index.html">若年軽症者オンライン診療スキーム</a>をご利用下さい。<br>';
+					result += '<br>';
 				}
 			} else 	if(jusin + kyukyu == 0) {
 				result += "あなたは受診の必要はありません。<br>";
 				result += "検査や薬の為に受診することは避けましょう。<br>";
+				result += '<br>';
 				result += "オミクロン株では順調に経過すれば風邪とは大きな違いはありません。このページを毎日チェックして簡易問診をしてみましょう。<br>";
+				result += '<br>';
 				result += "感染拡大に伴い宿泊療養のホテルは満床近いケースがあります。可能な限りご自宅で家庭内感染をしないよう工夫をしながら療養するようにしましょう。<br>";
+				result += '<br>';
 
 				/* 大阪府対応 */
 				if(kyukyu == 0 && year[3] <= 40 && sex[3] < 3) {
 					result += '大阪府居住の方は<a href="https://www.pref.osaka.lg.jp/kansenshoshien/jitaku_ryouyou/index.html">若年軽症者オンライン診療スキーム</a>をご利用下さい。<br>';
+					result += '<br>';
 				}
 			} else if(jusin > 0 && kyukyu == 0) {
 				result += "あなたは受診の必要はあります。<br>早急に「かかりつけ医」か「近くの医療機関」に電話連絡した上で、診断してもらうことをお薦めします。<br>連絡なしに直接医療機関にかかることはお避け下さい。<br>";
+				result += '<br>';
 			}
-			result += '参考までに、あなたの重症化リスクは健康な成人30代男性（血液型O型、飲酒喫煙なし）のおよそ' + jusyo + '倍です<br>';
+			result += '参考までに、あなたの重症化リスクは健康な成人30代男性（血液型O型、飲酒喫煙なし）のおよそ' + jusyo + '倍です。<br>';
+			result += '<br>';
 
 			if(year[3] < 20) {
 				// 未成年の場合カロナール
@@ -146,8 +155,8 @@ $(function() {
 				result += '発熱を抑える為に<a href="https://px.a8.net/svt/ejp?a8mat=1U3OQS+5R7ZF6+249K+BWGDT&a8ejpredirect=https%3A%2F%2Fwww.amazon.co.jp%2Fs%3Fk%3D%25E3%2583%25AD%25E3%2582%25AD%25E3%2582%25BD%25E3%2583%258B%25E3%2583%25B3%25E3%2583%2597%25E3%2583%25AC%25E3%2583%259F%25E3%2582%25A2%25E3%2583%25A0%26__mk_ja_JP%3D%25E3%2582%25AB%25E3%2582%25BF%25E3%2582%25AB%25E3%2583%258A%26crid%3DFKXS0U0DUYEB%26sprefix%3D%25E3%2583%25AD%25E3%2582%25AD%25E3%2582%25BD%25E3%2583%258B%25E3%2583%25B3%25E3%2583%2597%25E3%2583%25AC%25E3%2583%259F%25E3%2582%25A2%25E3%2583%25A0%252Caps%252C168%26ref%3Dnb_sb_noss_1%26tag%3Da8-affi-315334-22" rel="nofollow">ロキソニン</a>（ロキソプロフェン）、<a href="https://px.a8.net/svt/ejp?a8mat=1U3OQS+5R7ZF6+249K+BWGDT&a8ejpredirect=https%3A%2F%2Fwww.amazon.co.jp%2Fs%3Fk%3D%25E3%2582%25A4%25E3%2583%2596%26__mk_ja_JP%3D%25E3%2582%25AB%25E3%2582%25BF%25E3%2582%25AB%25E3%2583%258A%26crid%3DTIBV5UW1M7I1%26sprefix%3D%25E3%2582%25A4%25E3%2583%2596%252Caps%252C207%26ref%3Dnb_sb_noss_1%26tag%3Da8-affi-315334-22" rel="nofollow">イブ</a>（イブプロフェン）を準備するとよいでしょう。<br>';
 			}
 
-			// 40歳以上パルスオキシメーター
-			if(year[3] >= 40) {
+			// 40歳以上パルスオキシメーター＆多分jusyo>15
+			if(year[3] >= 40 || jusyo > 15) {
 				result += '重症化リスクも高くなる可能性もありますので、酸素飽和度を計測する<a href="https://px.a8.net/svt/ejp?a8mat=1U3OQS+5R7ZF6+249K+BWGDT&a8ejpredirect=https%3A%2F%2Fwww.amazon.co.jp%2Fs%3Fk%3D%25E3%2583%2591%25E3%2583%25AB%25E3%2582%25B9%25E3%2582%25AA%25E3%2582%25AD%25E3%2582%25B7%25E3%2583%25A1%25E3%2583%25BC%25E3%2582%25BF%25E3%2583%25BC%26__mk_ja_JP%3D%25E3%2582%25AB%25E3%2582%25BF%25E3%2582%25AB%25E3%2583%258A%26crid%3D30PSSI9Z0GHVV%26sprefix%3D%25E3%2583%2591%25E3%2583%25AB%25E3%2582%25B9%25E3%2582%25AA%25E3%2582%25AD%25E3%2582%25B7%25E3%2583%25A1%25E3%2583%25BC%25E3%2582%25BF%25E3%2583%25BC%252Caps%252C156%26ref%3Dnb_sb_noss_1%26tag%3Da8-affi-315334-22" rel="nofollow">パルスオキシメーター</a>も準備しましょう。<br>';
 			}
 
@@ -155,7 +164,9 @@ $(function() {
 			if(year[3] <= 20) {
 				result += '20代以下の方の重症化リスク、死亡リスクが増えています。普段から熱中症並びにコロナを意識した行動を行うようにしましょう。<br>';
 			}
+			result += '<br>';
 			result += 'これ以外に不安なことがありましたら、かかりつけ医、もしくはかかりつけ薬局に電話で連絡されるか、<a href="https://byoinnavi.drsquare.jp/">医療なび医療相談サービス</a>（株式会社eヘルスケア）、<a href="https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kenkou_iryou/covid19-kikokusyasessyokusya.html">新型コロナウイルスに関する相談・医療の情報や受診・相談センターの連絡先</a>（厚生労働省）までご相談下さい。<br>';
+			result += '<br>';
 			result += 'それでは、お大事にどうぞ。';
 		}
 		$('.result').html(result);
