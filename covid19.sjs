@@ -1,5 +1,5 @@
 /* covid19 easy checker (ja) by nano (C)NEET.co.,ltd */
-/* Release 220803-r2 */
+/* Release 220803-r3 */
 /* Kanjicode = UTF-8 */
 
 $(function() {
@@ -123,11 +123,11 @@ $(function() {
 			result += '参考までに、あなたの重症化リスクは健康な成人30代男性（血液型O型、飲酒喫煙なし）のおよそ' + jusyo + '倍です<br>';
 
 			if(year[3] < 20) {
-				// 未成年の場合カコナール
-				result += '発熱を抑える為に<a href="https://px.a8.net/svt/ejp?a8mat=1U3OQS+5R7ZF6+249K+BWGDT&a8ejpredirect=https%3A%2F%2Fwww.amazon.co.jp%2Fs%3Fk%3D%25E3%2582%25AB%25E3%2582%25B3%25E3%2583%258A%25E3%2583%25BC%25E3%2583%25AB%26__mk_ja_JP%3D%25E3%2582%25AB%25E3%2582%25BF%25E3%2582%25AB%25E3%2583%258A%26crid%3D39XOQPKOYBFO0%26sprefix%3D%25E3%2582%25AB%25E3%2582%25B3%25E3%2583%258A%25E3%2583%25BC%25E3%2583%25AB%252Caps%252C191%26ref%3Dnb_sb_noss_1%26tag%3Da8-affi-315334-22" rel="nofollow">カコナール</a>を準備するとよいでしょう。<br>';
+				// 未成年の場合カロナール
+				result += '発熱を抑える為に<a href="https://px.a8.net/svt/ejp?a8mat=1U3OQS+5R7ZF6+249K+BWGDT&a8ejpredirect=https%3A%2F%2Fwww.amazon.co.jp%2Fs%3Fk%3D%25E3%2582%25AB%25E3%2583%25AD%25E3%2583%258A%25E3%2583%25BC%25E3%2583%25AB%26__mk_ja_JP%3D%25E3%2582%25AB%25E3%2582%25BF%25E3%2582%25AB%25E3%2583%258A%26ref%3Dnb_sb_noss%26tag%3Da8-affi-315334-22" rel="nofollow">カロナール</a>（アセトアミノフェン）を準備するとよいでしょう。<br>';
 			} else {
 				// そうでない場合ロキソニンプレミアム、イブ
-				result += '発熱を抑える為に<a href="https://px.a8.net/svt/ejp?a8mat=1U3OQS+5R7ZF6+249K+BWGDT&a8ejpredirect=https%3A%2F%2Fwww.amazon.co.jp%2Fs%3Fk%3D%25E3%2583%25AD%25E3%2582%25AD%25E3%2582%25BD%25E3%2583%258B%25E3%2583%25B3%25E3%2583%2597%25E3%2583%25AC%25E3%2583%259F%25E3%2582%25A2%25E3%2583%25A0%26__mk_ja_JP%3D%25E3%2582%25AB%25E3%2582%25BF%25E3%2582%25AB%25E3%2583%258A%26crid%3DFKXS0U0DUYEB%26sprefix%3D%25E3%2583%25AD%25E3%2582%25AD%25E3%2582%25BD%25E3%2583%258B%25E3%2583%25B3%25E3%2583%2597%25E3%2583%25AC%25E3%2583%259F%25E3%2582%25A2%25E3%2583%25A0%252Caps%252C168%26ref%3Dnb_sb_noss_1%26tag%3Da8-affi-315334-22" rel="nofollow">ロキソニン</a>、<a href="https://px.a8.net/svt/ejp?a8mat=1U3OQS+5R7ZF6+249K+BWGDT&a8ejpredirect=https%3A%2F%2Fwww.amazon.co.jp%2Fs%3Fk%3D%25E3%2582%25A4%25E3%2583%2596%26__mk_ja_JP%3D%25E3%2582%25AB%25E3%2582%25BF%25E3%2582%25AB%25E3%2583%258A%26crid%3DTIBV5UW1M7I1%26sprefix%3D%25E3%2582%25A4%25E3%2583%2596%252Caps%252C207%26ref%3Dnb_sb_noss_1%26tag%3Da8-affi-315334-22" rel="nofollow">イブ</a>を準備するとよいでしょう。<br>';
+				result += '発熱を抑える為に<a href="https://px.a8.net/svt/ejp?a8mat=1U3OQS+5R7ZF6+249K+BWGDT&a8ejpredirect=https%3A%2F%2Fwww.amazon.co.jp%2Fs%3Fk%3D%25E3%2583%25AD%25E3%2582%25AD%25E3%2582%25BD%25E3%2583%258B%25E3%2583%25B3%25E3%2583%2597%25E3%2583%25AC%25E3%2583%259F%25E3%2582%25A2%25E3%2583%25A0%26__mk_ja_JP%3D%25E3%2582%25AB%25E3%2582%25BF%25E3%2582%25AB%25E3%2583%258A%26crid%3DFKXS0U0DUYEB%26sprefix%3D%25E3%2583%25AD%25E3%2582%25AD%25E3%2582%25BD%25E3%2583%258B%25E3%2583%25B3%25E3%2583%2597%25E3%2583%25AC%25E3%2583%259F%25E3%2582%25A2%25E3%2583%25A0%252Caps%252C168%26ref%3Dnb_sb_noss_1%26tag%3Da8-affi-315334-22" rel="nofollow">ロキソニン</a>（ロキソプロフェン）、<a href="https://px.a8.net/svt/ejp?a8mat=1U3OQS+5R7ZF6+249K+BWGDT&a8ejpredirect=https%3A%2F%2Fwww.amazon.co.jp%2Fs%3Fk%3D%25E3%2582%25A4%25E3%2583%2596%26__mk_ja_JP%3D%25E3%2582%25AB%25E3%2582%25BF%25E3%2582%25AB%25E3%2583%258A%26crid%3DTIBV5UW1M7I1%26sprefix%3D%25E3%2582%25A4%25E3%2583%2596%252Caps%252C207%26ref%3Dnb_sb_noss_1%26tag%3Da8-affi-315334-22" rel="nofollow">イブ</a>（イブプロフェン）を準備するとよいでしょう。<br>';
 			}
 
 			// 40歳以上パルスオキシメーター
@@ -377,7 +377,7 @@ $(function() {
 		insmatrix(HTML,"syoujou", "現在の症状"
 			, "0-0-1-1=倦怠感（だるい）"
 			, "0-0-1-2=咳"
-			, "0-0-1-3=発熱"
+			, "0-0-1-3=平熱より1℃以上高い発熱（目安37.5℃以上）"
 			, "0-0-1-4=頭痛"
 			, "0-0-1-5=筋肉痛"
 			, "0-0-1-6=鼻水"
@@ -442,6 +442,7 @@ $(function() {
 		_html+='<hr>';
 		_html+='<h3>注意事項</h3>';
 		_html+='<p>この簡易診断サイトは統計データに基づき作成されたもので、医師並びに医療従事者が監修を行っていません。</p>';
+		_html+='<p>統計データの入手元につきましてはソースコードに記載されています。</p>';
 		_html+='<p>この結果につきましては診断を行った行為とはならず、あくまで利用者の参考情報として提供しています。</p>';
 		_html+='<p>すべての統計データが網羅されていないため、重症化率に限り正しく計算されないことがあります。</p>';
 		_html+='<p>当フォームに入力された内容はサーバー並びにcookie等に保管されません。</p>';
