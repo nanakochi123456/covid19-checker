@@ -27,7 +27,7 @@
 
 - 一度だけ サーバー上のシェルで以下を実行します
 ```
- git clone https://github.com/nanakochi123456/covid19-checker.git
+git clone https://github.com/nanakochi123456/covid19-checker.git
 ```
 - .htaccess に 以下を記載します。
 ```
@@ -40,7 +40,7 @@ DirectoryIndex covid19.html
 - Wordpressのサイトヘッダー、サイトフッターが有効になります。
 - Wordpressのルートのディレクトリで一度だけ以下を実行します
 ```
-- git clone https://github.com/nanakochi123456/covid19-checker.git
+git clone https://github.com/nanakochi123456/covid19-checker.git
 ```
 - Wordpressのテーマディレクトリに wordpress/page-covid19-checker.php にある内容を転送します。
 - 固定ページで「新型コロナウイルス受診ナビ」という名称のページを作成します。
