@@ -188,11 +188,16 @@ $(function() {
 			result += '<ul>';
 			result += '<li><a href="https://byoinnavi.drsquare.jp/">医療なび医療相談サービス（無償）</a>（株式会社eヘルスケア）</li>';
 			result += '<li><a href="https://www.hospita.jp/bbs/">ホスピタ（無償）</a>（株式会社イーエックス・パートナーズ）</li>';
+			result += '<li><a href="https://www.askdoctors.jp/">アスクドクターズ（無償）</a>（エムスリー株式会社）</li>';
 			result += '<li><a href="https://doctor.goo.ne.jp/">gooドクター（有償）</a>（エヌ・ティ・ティレゾナント株式会社）</li>';
+			result += '<li><a href="https://health.docomo.ne.jp/apps/health/firstcall">dヘルスケア first call（有償）</a> （株式会社NTTドコモ）</li>';
 			result += '<li><a href="https://www.pocketdoctor.jp/">ポケットドクター（有償）</a>（株式会社オプティム）</li>';
 			result += '<li><a href="https://medicalnote-qa.jp/">メディカルノート（有償）</a>（株式会社メディカルノート）</li>';
 			result += '<li><a href="https://doctor.line.me/">LINEドクター（有償）</a>（LINEヘルスケア株式会社）</li>';
 			result += '<li><a href="https://yomidr.yomiuri.co.jp/iryo-sodan/">ヨミドクター（読売新聞購読者限定）</a>（株式会社読売新聞東京本社）</li>';
+			result += '<li><a href="https://www.secom-sonpo.co.jp/ohtsuka/hotline.html">セコム損保のドクターホットラインサービス（大塚グループ団体保険加入者向け）</a> （セコム損害保険株式会社）</li>';
+
+
 			result += '<li><a href="https://www.justanswer.jp/">ジャストアンサー（有償）</a></li>';
 			result += '</ul>';
 			result += 'それでは、お大事にどうぞ。';
