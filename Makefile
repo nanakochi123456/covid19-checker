@@ -10,20 +10,21 @@ JSPACKER=${PERL} ./bin/jsPacker.pl -e62 -q -f -i
 UTF16=${PERL} ./bin/utf16.pl
 TEMP=/mnt/h/temp
 DIST=./dist
+HTMLMAKER=${PERL} bin/upadate_html.pl
+
 copyright="/*!(C)NEET.co.ltd. nano*/"
 charset='@charset "UTF-8";'
 
 TARGET=\
 	${DIST}/covid19.min.js \
 	${DIST}/covid19.min.css \
-
+	covid19.html
 
 all: $(TARGET)
 
-clean: $(TARGET) $(plsrc)
-	rm -f $(TARGET) $(plsrc) $(TEMP)/* $(DIST)/*
 
-
+covid19.html: covid19-src.html
+	${HTMLMAKER}
 
 
 ${DIST}/covid19.min.js: covid19.sjs
