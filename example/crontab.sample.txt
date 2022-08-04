@@ -1,0 +1,10 @@
+How to crontab setting ?
+
+*/5 * * * * /bin/sh /home/username/covid19-update.sh >/dev/null 2>/dev/null
+
+*/5 * * * * /bin/sh /home/username/domainname/public_html/covid19-update.sh >/dev/null 2>/dev/null
+
+*/5 * * * * /bin/bash /home/username/covid19-update.sh >/dev/null 2>/dev/null
+
+*/5 * * * * /bin/bash /home/username/domainname/public_html/covid19-update.sh >/dev/null 2>/dev/null
+

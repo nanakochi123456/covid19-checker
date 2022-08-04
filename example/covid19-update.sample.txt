@@ -1,0 +1,26 @@
+#!/bin/sh
+cd (Wordpressの絶対パス)/covid19-check && /usr/bin/git pull
+
+#!/bin/sh
+cd /home/username/public_html/covid19-check && /usr/bin/git pull
+
+#!/bin/sh
+cd /home/username/domain_name/public_html/covid19-check && /usr/bin/git pull
+
+#!/bin/sh
+cd /home/username/public_html/covid19-check && /usr/local/bin/git pull
+
+#!/bin/sh
+cd /home/username/domain_name/public_html/covid19-check && /usr/local/bin/git pull
+
+#!/bin/bash
+cd /home/username/public_html/covid19-check && /usr/bin/git pull
+
+#!/bin/bash
+cd /home/username/domain_name/public_html/covid19-check && /usr/bin/git pull
+
+#!/bin/bash
+cd /home/username/public_html/covid19-check && /usr/local/bin/git pull
+
+#!/bin/bash
+cd /home/username/domain_name/public_html/covid19-check && /usr/local/bin/git pull
