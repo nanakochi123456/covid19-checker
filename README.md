@@ -18,10 +18,10 @@
 詳しいことはソースに記載してありますので、コメントをご確認下さい。
 
 # 簡単な無断転載の方法
--一度だけ サーバー上のシェルで以下を実行します
--git https://github.com/nanakochi123456/covid19-checker.git
--.htaccess に DirectoryIndex covid19.html を記載します
--crontabでgit pull、cp をします。高頻度で更新しているので1～2時間毎が最適。
+- 一度だけ サーバー上のシェルで以下を実行します
+- git https://github.com/nanakochi123456/covid19-checker.git
+- .htaccess に DirectoryIndex covid19.html を記載します
+- crontabでgit pull、cp をします。高頻度で更新しているので1～2時間毎が最適。
 
 # 以下につきましてはいい加減な実装となっています。
 
