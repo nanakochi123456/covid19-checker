@@ -1,6 +1,6 @@
 # covid19 easy checker (ja)
 
-日本語圏向けに作られた jquery によるコロナ簡易診断ツールです
+日本国内向けに作られた jquery によるコロナ簡易診断ツールです
 
 - 医療ひっ迫防止のため、コロナ陽性でも軽症相当であれば受診をおすすめしない
 - 本当に受診が必要か？
@@ -29,7 +29,7 @@
 - Wordpressのルートのディレクトリで一度だけ以下を実行します
 - git clone https://github.com/nanakochi123456/covid19-checker.git
 - Wordpressのテーマディレクトリに wordpress/page-covid19-checker.php にある内容を転送します。
-- 固定ページで「新型コロナウイルスナビ」という名称のページを作成します。
+- 固定ページで「新型コロナウイルス受診ナビ」という名称のページを作成します。
 - パーマリンクを「covid19」とします
 - テンプレートで coivd19-checker を選択します。
 - Wordpressのルート/coivd19-checker のディレクトリで crontabでgit pull をします。高頻度で更新しているので1～2時間毎が最適。
