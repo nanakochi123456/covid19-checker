@@ -131,7 +131,7 @@ $(function() {
 				result += "あなたは受診の必要はありません。<br>";
 				result += "検査や薬の為に受診することは避けましょう。<br>";
 				result += '<br>';
-				result += 'オミクロン株では順調に経過すれば風邪とは大きな違いはありません。このページを毎日チェックして簡易問診をしてみましょう。<br>しかし、最近では若年層の方が軽症でも死亡されるケースがございます。ちょっとした異変でも感じられましたらすぐに<a href="tel:119">119</a>をするようにしましょう。';
+				result += 'オミクロン株では順調に経過すれば風邪とは大きな違いはありません。このページを毎日チェックして簡易問診をしてみましょう。<br>しかし、最近では若年層の方が軽症でも死亡されるケースがございます。ちょっとした異変でも感じられましたらすぐに<a href="tel:119">119</a>をするようにしましょう。<br>';
 				result += '<br>';
 				result += "感染拡大に伴い宿泊療養のホテルは満床近いケースがあります。可能な限りご自宅で家庭内感染をしないよう工夫をしながら療養するようにしましょう。<br>";
 				result += '<br>';
@@ -172,8 +172,14 @@ $(function() {
 				result += '20代以下の方の重症化リスク、死亡リスクが増えています。普段から熱中症並びにコロナを意識した行動を行うようにしましょう。<br>';
 			}
 			result += '<br>';
-			result += 'これ以外に不安なことがありましたら、かかりつけ医、もしくはかかりつけ薬局に電話で連絡されるか、<a href="https://byoinnavi.drsquare.jp/">医療なび医療相談サービス</a>（株式会社eヘルスケア）、<a href="https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kenkou_iryou/covid19-kikokusyasessyokusya.html">新型コロナウイルスに関する相談・医療の情報や受診・相談センターの連絡先</a>（厚生労働省）までご相談下さい。<br>';
-			result += '<br>';
+			result += 'これ以外に不安なことがありましたら、かかりつけ医、もしくはかかりつけ薬局に電話で連絡されるか、<a href="https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kenkou_iryou/covid19-kikokusyasessyokusya.html">新型コロナウイルスに関する相談・医療の情報や受診・相談センターの連絡先</a>（厚生労働省）に相談されるか、以下のようなサービスに相談してみて下さい。<br>';
+			result += '<ul>';
+			result += '<li><a href="https://byoinnavi.drsquare.jp/">医療なび医療相談サービス（無償）</a>（株式会社eヘルスケア）</li>';
+			result += '<li><a href="https://www.hospita.jp/bbs/">ホスピタ（無償）</a>（株式会社イーエックス・パートナーズ）</li>';
+			result += '<li><a href="https://doctor.goo.ne.jp/">gooドクター（有償）</a>（エヌ・ティ・ティレゾナント株式会社）</li>';
+			result += '<li><a href="https://www.pocketdoctor.jp/">ポケットドクター（有償）</a>（株式会社オプティム）</li>';
+			result += '<li><a href="https://www.justanswer.jp/">ジャストアンサー（有償）</a></li>';
+			result += '</ul>';
 			result += 'それでは、お大事にどうぞ。';
 		}
 		$('.result').html(result);
