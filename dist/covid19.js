@@ -492,7 +492,7 @@ $(function() {
 	// <以下変更禁止> footer
 	function load_covid19footer() {	
 		var _html="";
-		_html+='<p>本ウェブサイトは無断転載歓迎です。詳細は<a href="https://github.com/nanakochi123456/covid19-checker">github</a>まで</p>';
+		_html+='<p>本ウェブサイトは個人、法人、団体関わらず無断転載歓迎です。詳細は<a href="https://github.com/nanakochi123456/covid19-checker">github</a>まで</p>';
 		_html+='<p>この簡易診断サイトは統計データに基づき作成されたもので、医師並びに医療従事者が監修を行っていません。</p>';
 		_html+='<p>統計データの入手元につきましては<a href="https://github.com/nanakochi123456/covid19-checker/blob/main/covid19.sjs">ソースコード</a>に記載されています。</p>';
 		_html+='<p>この結果につきましては診断を行った行為とはならず、あくまで利用者の参考情報として提供しています。</p>';
