@@ -1,6 +1,6 @@
 /* covid19 easy checker (ja) by nano (C)NEET.co.,ltd */
 /* License GPL3 https://www.gnu.org/licenses/gpl-3.0.ja.html */
-/* Release 220803-r7 */
+/* Release 220803-r8 */
 /* Kanjicode = UTF-8 */
 /* 1TAB=4Space */
 
@@ -11,6 +11,7 @@ $(function() {
 
 	// フォームの表示
 	load_covid19form();
+	load_covid19footer();
 
 
 	// 簡易診断
@@ -486,21 +487,22 @@ $(function() {
 		_html+='</div>';
 		_html+='</form>';
 		_html+='<div class="result"></div>';
-
-		// <以下変更禁止>
-
-		_html+='<hr>';
-		_html+='<h3>注意事項</h3>';
+		$(HTML).append(_html);
+	}
+	// <以下変更禁止> footer
+	function load_covid19footer() {	
+		var _html="";
+		_html+='<p>本ウェブサイトは無断転載歓迎です。詳細は<a href="https://github.com/nanakochi123456/covid19-checker">github</a>まで</p>';
 		_html+='<p>この簡易診断サイトは統計データに基づき作成されたもので、医師並びに医療従事者が監修を行っていません。</p>';
-		_html+='<p>統計データの入手元につきましてはソースコードに記載されています。</p>';
+		_html+='<p>統計データの入手元につきましては<a href="https://github.com/nanakochi123456/covid19-checker/blob/main/covid19.sjs">ソースコード</a>に記載されています。</p>';
 		_html+='<p>この結果につきましては診断を行った行為とはならず、あくまで利用者の参考情報として提供しています。</p>';
 		_html+='<p>すべての統計データが網羅されていないため、重症化率に限り正しく計算されないことがあります。</p>';
 		_html+='<p>当フォームに入力された内容はサーバー並びにcookie等に保管されません。</p>';
+		_html+='<p>本簡易診断は日本国内の実態に基づいて作成しています。</p>';
+		_html+='<br>';
 		_html+='<p>&copy;<a href="https://neet.co.jp/">NEET Co.,Ltd.</a> All Right Reserved.</p>';
-		_html+='<p>This is open source. <a href="https://github.com/nanakochi123456/covid19-checker">github source</a> <a href="https://www.gnu.org/licenses/gpl-3.0.ja.html">GPL3</a></p>';
-
-		$(HTML).append(_html);
+		_html+='<p>This is open source. <a href="https://github.com/nanakochi123456/covid19-checker">github source</a> <a href="https://www.gnu.org/licenses/gpl-3.0.ja.html">GPL3</a> <a href="https://blog.neet.co.jp/contact/">Contact</a></p>';
+		$('footer').append(_html);
 		// </以下変更禁止> ここまで
-
 	}
 });

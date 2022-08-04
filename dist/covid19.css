@@ -1,7 +1,7 @@
 @charset "UTF-8";
 /* covid19 easy checker (ja) by nano (C)NEET.co.,ltd */
 /* License GPL3 https://www.gnu.org/licenses/gpl-3.0.ja.html */
-/* Release 220803-r7 */
+/* Release 220803-r8 */
 /* Kanjicode = UTF-8 */
 /* 1TAB=4Space */
 /* Document
@@ -314,7 +314,9 @@
 
 body {
   background: #f0f0f0;
-  color: #111; }
+  color: #111;
+  margin: 0;
+  padding: 0; }
 
 /* media query */
 /* media query functions */
@@ -422,3 +424,18 @@ input[type=checkbox] {
   transform: scale(1.2);
   border-radius: 3px;
   margin-right: 10px; }
+
+/* footer */
+footer {
+  background: rgba(0, 0, 0, 0.7);
+  color: #eee;
+  width: 100%;
+  margin: 0;
+  padding: 10px 5% 0 5%; }
+  footer p {
+    margin: 0;
+    padding: 0; }
+  footer a {
+    color: #fff; }
+    footer a:hover {
+      background: rgba(150, 150, 150, 0.7); }
