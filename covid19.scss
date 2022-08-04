@@ -83,7 +83,7 @@ $breakpoints_max: (
 
 
 /* Title */
-h1 {
+h1.coivd19 {
 	position: relative;
 	margin: 30px;
 	text-align: center;
@@ -117,6 +117,12 @@ h1 {
 		padding: 1rem 2rem;
 		color: #fff;
 		background: #fa4141;
+		@include mq(md) {
+			font-size: 36px;
+		}
+		@include maq(md) {
+			font-size: 20px;
+		}
 
 		&:before,
 		&:after {
@@ -227,6 +233,10 @@ footer {
 	width: 100%;
 	margin: 0;
 	padding: 10px 5% 0 5%;
+}
+
+footer .coivd19 {
+	font-size: 15.5px;
 
 	p {
 		margin: 0;

@@ -329,7 +329,7 @@ $(function() {
 		var _html="";
 
 		$(HTML).html('');
-		$(HTML).append('<h1><span>新型コロナウイルス受診ナビ</span></h1>');
+		$(HTML).append('<h1 class="coivd19"><span>新型コロナウイルス受診ナビ</span></h1>');
 		$(HTML).append('<p>受診が必要か、緊急搬送が必要か簡単な問診でお答えします。</p>');
 		$(HTML).append('<p>感染者が1日20万人超えと医療ひっ迫している状態です。ご協力をお願いします。</p>');
 
@@ -504,6 +504,7 @@ $(function() {
 	// <以下変更禁止> footer
 	function load_covid19footer() {	
 		var _html="";
+		_html+='<div class="coivd19">';
 		_html+='<p>本ウェブサイトは個人、法人、団体関わらず無断転載歓迎です。詳細は<a href="https://github.com/nanakochi123456/covid19-checker">github</a>まで</p>';
 		_html+='<p>この簡易診断サイトは統計データに基づき作成されたもので、医師並びに医療従事者が監修を行っていません。</p>';
 		_html+='<p>統計データの入手元につきましては<a href="https://github.com/nanakochi123456/covid19-checker/blob/main/covid19.sjs">ソースコード</a>に記載されています。</p>';
@@ -514,7 +515,12 @@ $(function() {
 		_html+='<br>';
 		_html+='<p>&copy;<a href="https://neet.co.jp/">NEET Co.,Ltd.</a> All Right Reserved.</p>';
 		_html+='<p>This is open source. <a href="https://github.com/nanakochi123456/covid19-checker">github source</a> <a href="https://www.gnu.org/licenses/gpl-3.0.ja.html">GPL3</a> <a href="https://blog.neet.co.jp/contact/">Contact</a></p>';
+		_html+='<hr>';
+		_html+='</div>';
+		var originalfooter=$('footer').html();
+		$('footer').html("");
 		$('footer').append(_html);
+		$('footer').append(originalfooter);
 		// </以下変更禁止> ここまで
 	}
 });
