@@ -123,6 +123,12 @@ $(function() {
 				result += "無症状かつ濃厚接触の疑いがある場合は、自治体や街の無料PCR検査を活用しましょう。<br>";
 				result += '<br>';
 
+
+				/* 東京都対応 */
+				if(kyukyu == 0 && year[3] == 20 && sex[3] < 3) {
+					result += '東京都居住の方は<a href="https://www.fukushihoken.metro.tokyo.lg.jp/iryo/kansen/corona_portal/shien/youseitouroku.html">東京都陽性者登録センター</a>をご利用ください。抗原検査キットも配布してもらえます。<br>';
+					result += '<br>';
+				}
 				/* 大阪府対応 */
 				if(kyukyu == 0 && year[3] <= 40 && sex[3] < 3) {
 					result += '大阪府居住の方は<a href="https://www.pref.osaka.lg.jp/kansenshoshien/jitaku_ryouyou/index.html">若年軽症者オンライン診療スキーム</a>をご利用下さい。<br>';
@@ -136,6 +142,12 @@ $(function() {
 				result += '<br>';
 				result += "感染拡大に伴い宿泊療養のホテルは満床近いケースがあります。可能な限りご自宅で家庭内感染をしないよう工夫をしながら療養するようにしましょう。<br>";
 				result += '<br>';
+
+				/* 東京都対応 */
+				if(kyukyu == 0 && year[3] == 20 && sex[3] < 3) {
+					result += '東京都居住の方は<a href="https://www.fukushihoken.metro.tokyo.lg.jp/iryo/kansen/corona_portal/shien/youseitouroku.html">東京都陽性者登録センター</a>をご利用ください。抗原検査キットも配布してもらえます。<br>';
+					result += '<br>';
+				}
 
 				/* 大阪府対応 */
 				if(kyukyu == 0 && year[3] <= 40 && sex[3] < 3) {
