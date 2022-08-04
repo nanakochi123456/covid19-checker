@@ -1,3 +1,5 @@
+Filename : covid19-update.sh
+
 #!/bin/sh
 cd (Wordpressの絶対パス)/covid19-check && /usr/bin/git pull
 
