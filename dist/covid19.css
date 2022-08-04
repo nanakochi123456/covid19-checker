@@ -417,7 +417,8 @@ input[type="number"] {
   padding: 0;
   font-size: 20px;
   text-align: right;
-  width: 80px; }
+  width: 80px;
+  margin-right: 9px; }
 
 select {
   margin: 0;
