@@ -24,12 +24,12 @@
 - git clone https://github.com/nanakochi123456/covid19-checker.git
 - .htaccess に DirectoryIndex covid19.html を記載します
 - crontabでgit pull、cp をします。高頻度で更新しているので1～2時間毎が最適。
-- 必ず HTML内に<section class="covid19"></section>、<footer></footer>が記載されている状態にしてください。
+- 必ず HTML内に&lt;section class="covid19"&gt;&lt;/section&gt;、&lt;footer&gt;&lt;/footer&gt;が記載されている状態にしてください。
 
 # Wordpressでの無断転載方法
 - Wordpressのサイトヘッダー、サイトフッターが有効になります。
 - Wordpressのルートのディレクトリで一度だけ以下を実行します
--- git clone https://github.com/nanakochi123456/covid19-checker.git
+- git clone https://github.com/nanakochi123456/covid19-checker.git
 - Wordpressのテーマディレクトリに wordpress/page-covid19-checker.php にある内容を転送します。
 - 固定ページで「新型コロナウイルス受診ナビ」という名称のページを作成します。
 - パーマリンクを「covid19」とします https://hogehoge/covid19 として公開されます。それ以外でも動作するはずです。（ただし coivd19-checker と設定しないこと）
@@ -55,23 +55,23 @@
 - 極度な体温なら救急（41.0℃超え）
 - 発熱して4日以上たったら受診
 - 抗原検査キットの結果は、不明等だけ要受診にしてある（陽性、陰性の入力は実は関係ない）
--- ↑理由としては抗原検査キットの使い方が難しいって声もあるためPCRさせたほうが手っ取り早い
+- ↑理由としては抗原検査キットの使い方が難しいって声もあるためPCRさせたほうが手っ取り早い
 - 現在の症状は「口が紫になってる」から下がすべて救急、それ以外は受診不要
 - 基礎疾患は精神、知的、その他を除きすべて要受診
 - 重症化率の増加は
--- 妊婦、年齢、血液型、BMI30以上、喫煙、飲酒、基礎疾患の一部（一部は統計データがないため増加されない）
+- 妊婦、年齢、血液型、BMI30以上、喫煙、飲酒、基礎疾患の一部（一部は統計データがないため増加されない）
 - 10歳未満と65歳～69歳の重症化率は推定
 - 飲酒の重症化率は実データから推定したもの
 - 重症化率はいいかげんな計算だが、重症化率にそれぞれの掛け数が設定してあり、すべて掛け算で算出する
 - この基礎疾患には重症化率がデータ不足で設定されていない。
--- 手術後1か月以内
--- 慢性の肝臓病
--- 血液の病気
--- 免疫の異常に伴う神経疾患や神経筋疾患
--- 神経疾患や神経筋疾患が原因で身体の機能が衰えた状態
--- 染色体異常
--- 重症心身障害
--- 睡眠時無呼吸症候群
+- 手術後1か月以内
+- 慢性の肝臓病
+- 血液の病気
+- 免疫の異常に伴う神経疾患や神経筋疾患
+- 神経疾患や神経筋疾患が原因で身体の機能が衰えた状態
+- 染色体異常
+- 重症心身障害
+- 睡眠時無呼吸症候群
 - 基礎疾患による重症化率は手抜きで一律高齢者(65～、50代）の数値で計算してる
 - 10代以下カロナール（ネットでも本物のカロナールはヒットしにくいので代替商品がメイン）、20代以上はロキソかイブ
 - 40代以上 or 重症率20倍以上 酸素飽和度（50代以上だが落としてある）
@@ -86,9 +86,9 @@
 - CSSにつきましては無制限に自由に書き換えて構いません
 - ビルドにはWSL2（なくても動く）、make、perl、sassコンパイラ、yuicompressor、uglifyjsが必要です。環境にあわせて Makefileを書き換える必要があります。
 - 同梱しているのは下記のとおりです
--- sanitize https://github.com/csstools/sanitize.css
--- JS Packer for perl https://www.elr.com.au
--- あたしがやってた pyukiwikiプロジェクトの派生物
+- sanitize https://github.com/csstools/sanitize.css
+- JS Packer for perl https://www.elr.com.au
+- あたしがやってた pyukiwikiプロジェクトの派生物
 - 拡張子 sjs は js にリネームすればそのまま動きます。
 - これと全く同じものが動いてるのは→ https://neet.co.jp/covid19/ Wordpressで動いています
 - noteの記事にもしました。 https://note.com/nano773/n/n5cded6a197dd
