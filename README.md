@@ -70,7 +70,7 @@
 - CSSにはsanitizeあたりが必要そうです。scssにリネームしてコンパイルして下さい。
 - https://github.com/csstools/sanitize.css
 - 拡張子 sjs は js にリネームすればそのまま動きます。
-- これと全く同じものが動いてるのは→ https://neet.co.jp/covid19/ ただし圧縮かかってます。
+- これと全く同じものが動いてるのは→ https://neet.co.jp/covid19/ Wordpressで動いています
 - noteの記事にもしました。 https://note.com/nano773/n/n5cded6a197dd
 
 # アフィリエイトにつきまして
