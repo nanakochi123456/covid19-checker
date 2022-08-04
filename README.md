@@ -21,18 +21,27 @@
 
 # 簡単な無断転載の方法
 
-無断転載して良いサーバーは、sshが可能でgitコマンドがインストールされているサーバーに限ります（レンタルサーバー可）
+無断転載して良いサーバーは、sshが可能でgitコマンドがインストールされてて、crontabがサポートされているサーバーに限ります（レンタルサーバー可）
+
+（FTPしかできないサーバーにも転載可能ですが、現実的に更新が大変だと思います）
 
 - 一度だけ サーバー上のシェルで以下を実行します
-- git clone https://github.com/nanakochi123456/covid19-checker.git
-- .htaccess に DirectoryIndex covid19.html を記載します
+```
+ git clone https://github.com/nanakochi123456/covid19-checker.git
+```
+- .htaccess に 以下を記載します。
+```
+DirectoryIndex covid19.html
+```
 - crontabでgit pull、cp をします。高頻度で更新しているので1～2時間毎が最適。
 - 必ず HTML内に&lt;section class="covid19"&gt;&lt;/section&gt;、&lt;footer&gt;&lt;/footer&gt;が記載されている状態にしてください。
 
 # Wordpressでの無断転載方法
 - Wordpressのサイトヘッダー、サイトフッターが有効になります。
 - Wordpressのルートのディレクトリで一度だけ以下を実行します
+```
 - git clone https://github.com/nanakochi123456/covid19-checker.git
+```
 - Wordpressのテーマディレクトリに wordpress/page-covid19-checker.php にある内容を転送します。
 - 固定ページで「新型コロナウイルス受診ナビ」という名称のページを作成します。
 - パーマリンクを「covid19」とします https://hogehoge/covid19 として公開されます。それ以外でも動作するはずです。（ただし coivd19-checker と設定しないこと）
