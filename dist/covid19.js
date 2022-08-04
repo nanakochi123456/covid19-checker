@@ -1,6 +1,6 @@
 /* covid19 easy checker (ja) by nano (C)NEET.co.,ltd */
 /* License GPL3 https://www.gnu.org/licenses/gpl-3.0.ja.html */
-/* Release 220804-r1 */
+/* Release 220805-r1 */
 /* Kanjicode = UTF-8 */
 /* 1TAB=4Space */
 
@@ -496,9 +496,7 @@ $(function() {
 			"0-0-1-20=その他"
 		);
 
-		_html+='<div>';
-		_html+='</div>';
-		_html+='<div>';
+		_html+='<div class="button">';
 		_html+='<button id="covid19calc">簡易診断結果を見てみる</button>';
 		_html+='</div>';
 		_html+='</form>';
