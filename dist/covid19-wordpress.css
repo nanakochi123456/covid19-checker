@@ -1,0 +1,137 @@
+@charset "UTF-8";
+/* covid19 easy checker (ja) by nano (C)NEET.co.,ltd */
+/* License GPL3 https://www.gnu.org/licenses/gpl-3.0.ja.html */
+/* Release 220804-r1 */
+/* Kanjicode = UTF-8 */
+/* 1TAB=4Space */
+/* media query */
+/* media query functions */
+/* powerd by CSS見出しデザイン */
+/* https://jajaaan.co.jp/css/css-headline/ */
+/* Title */
+h1.coivd19 {
+  position: relative;
+  margin: 30px;
+  text-align: center; }
+  h1.coivd19:before, h1.coivd19:after {
+    position: absolute;
+    z-index: 0;
+    bottom: -10px;
+    display: block;
+    content: '';
+    border: 1em solid #d90606; }
+  h1.coivd19:before {
+    left: -30px;
+    border-left-width: 15px;
+    border-left-color: transparent; }
+  h1.coivd19:after {
+    right: -30px;
+    border-right-width: 15px;
+    border-right-color: transparent; }
+  h1.coivd19 span {
+    position: relative;
+    z-index: 1;
+    display: block;
+    padding: 1rem 2rem;
+    color: #fff;
+    background: #fa4141; }
+    @media (min-width: 769px) {
+      h1.coivd19 span {
+        font-size: 36px; } }
+    @media (max-width: 992px) {
+      h1.coivd19 span {
+        font-size: 20px; } }
+    h1.coivd19 span:before, h1.coivd19 span:after {
+      position: absolute;
+      bottom: -10px;
+      display: block;
+      width: 10px;
+      height: 10px;
+      content: '';
+      border-style: solid;
+      border-color: #b70505 transparent transparent transparent; }
+    h1.coivd19 span:before {
+      left: 0;
+      border-width: 10px 0 0 10px; }
+    h1.coivd19 span:after {
+      right: 0;
+      border-width: 10px 10px 0 0; }
+
+/* JS Forms */
+.covid19 {
+  width: 90%;
+  margin: auto; }
+  @media (min-width: 769px) {
+    .covid19 div {
+      display: table;
+      padding: 10px 10px 2px 10px;
+      position: relative;
+      /* Label */ }
+      .covid19 div div:nth-child(1) {
+        display: table-cell;
+        font-weight: bold;
+        width: 300px;
+        border-top: 1px solid #d90606; }
+      .covid19 div div:nth-child(2) {
+        display: table-cell;
+        border-top: 1px solid #d90606;
+        width: calc(100vw - 450px); } }
+  @media (max-width: 992px) {
+    .covid19 div {
+      display: block;
+      padding: 10px 10px 2px 10px;
+      position: relative;
+      /* Label */ }
+      .covid19 div div:nth-child(1) {
+        margin: 0;
+        padding: 0;
+        font-weight: bold;
+        border-top: 1px solid #d90606; }
+      .covid19 div div:nth-child(2) {
+        margin: 0;
+        padding: 0; } }
+
+.err {
+  color: red;
+  display: none; }
+
+.result {
+  font-weight: bold; }
+
+input[type="number"] {
+  margin: 0;
+  padding: 0;
+  font-size: 20px;
+  text-align: right;
+  width: 80px;
+  margin-right: 9px; }
+
+select {
+  margin: 0;
+  padding: 0;
+  font-size: 20px; }
+
+input[type=checkbox] {
+  width: 18px;
+  height: 18px;
+  transform: scale(1.2);
+  border-radius: 3px;
+  margin-right: 10px; }
+
+/* footer */
+footer {
+  background: rgba(0, 0, 0, 0.7);
+  color: #eee;
+  width: 100%;
+  margin: 0;
+  padding: 10px 5% 0 5%; }
+
+footer .coivd19 {
+  font-size: 15.5px; }
+  footer .coivd19 p {
+    margin: 0;
+    padding: 0; }
+  footer .coivd19 a {
+    color: #fff; }
+    footer .coivd19 a:hover {
+      background: rgba(150, 150, 150, 0.7); }

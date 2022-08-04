@@ -7,9 +7,9 @@
  */
 
 wp_enqueue_style('covid19',
-	"/covid19-checker/dist/covid19.min.css",
+	"/covid19-checker/dist/covid19-wordpress.min.css",
     array(),
-    date_i18n( 'YmdHis', filemtime( dirname(__FILE__). '../../../covid19-checker/dist/coivd19.min.css' ) )
+    date_i18n( 'YmdHis', filemtime( dirname(__FILE__). '../../../covid19-checker/dist/covid19-wordpress.min.css' ) )
 );
 
 wp_enqueue_script('covid19',

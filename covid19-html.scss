@@ -1,0 +1,10 @@
+@import "lib/sanitize";
+
+body {
+	background: #f0f0f0;
+	color: #111;
+	margin: 0;
+	padding: 0;
+}
+
+@import "covid19";

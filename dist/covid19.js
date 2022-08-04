@@ -13,7 +13,6 @@ $(function() {
 	load_covid19form();
 	load_covid19footer();
 
-
 	// 簡易診断
 	$('#covid19calc').on('click', function() {
 		var sex=readform('sex'),

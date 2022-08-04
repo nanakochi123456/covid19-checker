@@ -13,17 +13,18 @@ DIST=./dist
 HTMLMAKER=${PERL} bin/upadate_html.pl
 
 copyright="/*!(C)NEET.co.ltd. nano*/"
-charset='@charset "UTF-8";'
+charset='@chars.et "UTF-8";'
 
 TARGET=\
 	${DIST}/covid19.min.js \
 	${DIST}/covid19.min.css \
+	${DIST}/covid19-wordpress.min.css \
 	covid19.html
 
 all: $(TARGET)
 
 
-covid19.html: covid19-src.html covid19.sjs covid19.scss
+covid19.html: covid19-src.html covid19.sjs covid19.scss covid19-html.scss covid19-wordpress.scss
 	${HTMLMAKER}
 
 
@@ -35,11 +36,20 @@ ${DIST}/covid19.min.js: covid19.sjs
 	echo ${copyright} > ${DIST}/covid19.min.js
 	cat ${TEMP}/covid19.min.js.tmp3 >> ${DIST}/covid19.min.js
 
-${DIST}/covid19.css: covid19.scss
-	$(SASS) covid19.scss:${DIST}/covid19.css
+${DIST}/covid19.css: covid19-html.scss covid19.scss
+	$(SASS) covid19-html.scss:${DIST}/covid19.css
+
+${DIST}/covid19-wordpress.css: covid19-wordpress.scss covid19.scss
+	$(SASS) covid19-wordpress.scss:${DIST}/covid19-wordpress.css
 
 ${DIST}/covid19.min.css: ${DIST}/covid19.css
 	${YUICSS} ${DIST}/covid19.css | sed -e "s/\@charset \"UTF-8\";//g"> ${TEMP}/covid19.min.css.tmp1
 	echo ${charset} > ${DIST}/covid19.min.css
 	echo ${copyright} >> ${DIST}/covid19.min.css
 	cat ${TEMP}/covid19.min.css.tmp1 >> ${DIST}/covid19.min.css
+
+${DIST}/covid19-wordpress.min.css: ${DIST}/covid19-wordpress.css
+	${YUICSS} ${DIST}/covid19-wordpress.css | sed -e "s/\@charset \"UTF-8\";//g"> ${TEMP}/covid19-wordpress.min.css.tmp1
+	echo ${charset} > ${DIST}/covid19-wordpress.min.css
+	echo ${copyright} >> ${DIST}/covid19-wordpress.min.css
+	cat ${TEMP}/covid19-wordpress.min.css.tmp1 >> ${DIST}/covid19-wordpress.min.css
