@@ -4,6 +4,7 @@
  * Author: Yozakura Nano (C)NEET co.,ltd.
  * Author URI: https://neet.co.jp/covid19
  * Description: 新型コロナウイルス受診ナビ
+ * License: GPL3
  */
 
 wp_enqueue_style('covid19',
@@ -19,7 +20,6 @@ wp_enqueue_script('covid19',
 );
 
 get_header();
-
- ?>
+?>
 <section class="covid19"></section>
 <?php get_footer(); ?>
