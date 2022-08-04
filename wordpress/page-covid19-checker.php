@@ -1,6 +1,9 @@
 <?php
 /**
  * Template Name: covid19-checker
+ * Author: Yozakura Nano (C)NEET co.,ltd.
+ * Author URI: https://neet.co.jp/covid19
+ * Description: 新型コロナウイルス受診ナビ
  */
 
 wp_enqueue_style('covid19',
