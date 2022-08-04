@@ -235,13 +235,13 @@ input[type=checkbox] {
 /* footer */
 footer {
 	background: $footerbg;
-	color: $footercolor;
 	width: 100%;
 	margin: 0;
 	padding: 10px 5% 0 5%;
 }
 
 footer .coivd19 {
+	color: $footercolor;
 	font-size: 15.5px;
 
 	p {

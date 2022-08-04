@@ -443,12 +443,12 @@ input[type=checkbox] {
 /* footer */
 footer {
   background: rgba(0, 0, 0, 0.7);
-  color: #eee;
   width: 100%;
   margin: 0;
   padding: 10px 5% 0 5%; }
 
 footer .coivd19 {
+  color: #eee;
   font-size: 15.5px; }
   footer .coivd19 p {
     margin: 0;
