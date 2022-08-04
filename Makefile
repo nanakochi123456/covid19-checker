@@ -13,7 +13,7 @@ DIST=./dist
 HTMLMAKER=${PERL} bin/upadate_html.pl
 
 copyright="/*!(C)NEET.co.ltd. nano*/"
-charset='@chars.et "UTF-8";'
+charset='@charset "UTF-8";'
 
 TARGET=\
 	${DIST}/covid19.min.js \
