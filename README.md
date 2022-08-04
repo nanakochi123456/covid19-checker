@@ -24,6 +24,16 @@
 - .htaccess に DirectoryIndex covid19.html を記載します
 - crontabでgit pull、cp をします。高頻度で更新しているので1～2時間毎が最適。
 
+# Wordpressでの無断転載方法
+- Wordpressのサイトヘッダー、サイトフッターが有効になります。
+- Wordpressのルートのディレクトリで一度だけ以下を実行します
+- git clone https://github.com/nanakochi123456/covid19-checker.git
+- Wordpressのテーマディレクトリに wordpress/page-covid19-checker.php にある内容を転送します。
+- 固定ページで「新型コロナウイルスナビ」という名称のページを作成します。
+- パーマリンクを「covid19」とします
+- テンプレートで coivd19-checker を選択します。
+- crontabでgit pull、cp をします。高頻度で更新しているので1～2時間毎が最適。
+
 # 以下につきましてはいい加減な実装となっています。
 
 - 基礎疾患の症状別の重症化率は、どの年齢でも65歳以上、もしくは50歳以上に固定されている。
