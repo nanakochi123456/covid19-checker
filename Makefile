@@ -23,7 +23,7 @@ TARGET=\
 all: $(TARGET)
 
 
-covid19.html: covid19-src.html
+covid19.html: covid19-src.html covid19.sjs covid19.scss
 	${HTMLMAKER}
 
 
