@@ -70,9 +70,10 @@
 # その他
 
 - CSSにつきましては無制限に自由に書き換えて構いません
-- sassコンパイラが必要です
-- CSSにはsanitizeあたりが必要そうです。scssにリネームしてコンパイルして下さい。
-- https://github.com/csstools/sanitize.css
+- ビルドにはWSL2（なくても動く）、make、perl、sassコンパイラ、yuicompressor、uglifyjsが必要です。環境にあわせて Makefileを書き換える必要があります。
+- 同梱しているのは下記のとおりです
+-- sanitize https://github.com/csstools/sanitize.css
+-- JS Packer for perl https://www.elr.com.au
 - 拡張子 sjs は js にリネームすればそのまま動きます。
 - これと全く同じものが動いてるのは→ https://neet.co.jp/covid19/ Wordpressで動いています
 - noteの記事にもしました。 https://note.com/nano773/n/n5cded6a197dd
@@ -80,6 +81,9 @@
 # アフィリエイトにつきまして
 - そのままにしていただければ作者が泣いて喜びます
 - しかし、ほぼ同じ内容の検索結果になるのであれば、任意に書き換えて収益にして頂いて構いません。紹介するショッピングモールについては差異があっても構いません。
+
+# ライセンス
+- とりあえず GPL3 https://www.gnu.org/licenses/gpl-3.0.ja.html
 
 # お問い合わせ
 
