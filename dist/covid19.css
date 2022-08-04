@@ -381,7 +381,7 @@ h1.coivd19 {
     background: inherit;
     color: inherit; }
     .covid19 a:hover {
-      background: inherit;
+      background: #888;
       color: inherit; }
   @media (min-width: 769px) {
     .covid19 div {
