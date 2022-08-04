@@ -39,6 +39,27 @@
 - どの方法でも良いので、jquery を includeされた状態にします。
 - Wordpressのルート/coivd19-checker のディレクトリで crontabでgit pull をします。高頻度で更新しているので1～2時間毎が最適。
 
+# &lt;script&gt;タグをdeferしている時
+
+すべて defer にしないとうまく動かないと思います。
+
+Wordpressですべて deferするときは、functions.php に以下を記載します。
+
+```
+function jsdefer($buffer) {
+	$search = array(
+		'/<script /s',
+	);
+	$replace = array(
+		'<script defer ',
+	);
+	$buffer = preg_replace($search, $replace, $buffer);
+	return $buffer;
+}
+
+ob_start("jsdefer");
+```
+
 # crontabとかの書き方
 example/ を参照
 
