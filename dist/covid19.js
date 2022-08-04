@@ -501,7 +501,7 @@ $(function() {
 		_html+='<div class="result"></div>';
 		$(HTML).append(_html);
 	}
-	// <以下変更禁止> footer
+	// <以下変更禁止> footer　（本来のfooterはこの下に表示されます）
 	function load_covid19footer() {	
 		var _html="";
 		_html+='<div class="coivd19">';
@@ -517,6 +517,8 @@ $(function() {
 		_html+='<p>This is open source. <a href="https://github.com/nanakochi123456/covid19-checker">github source</a> <a href="https://www.gnu.org/licenses/gpl-3.0.ja.html">GPL3</a> <a href="https://blog.neet.co.jp/contact/">Contact</a></p>';
 		_html+='<hr>';
 		_html+='</div>';
+
+		// 本来のfooterをバックアップを取り一度全削除し、本来のfooterをcovid19-checkerのfooterの下に設置する
 		var originalfooter=$('footer').html();
 		$('footer').html("");
 		$('footer').append(_html);

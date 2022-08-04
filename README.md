@@ -24,6 +24,7 @@
 - git clone https://github.com/nanakochi123456/covid19-checker.git
 - .htaccess に DirectoryIndex covid19.html を記載します
 - crontabでgit pull、cp をします。高頻度で更新しているので1～2時間毎が最適。
+- 必ず HTML内に<section class="covid19"></section>、<footer></footer>が記載されている状態にしてください。
 
 # Wordpressでの無断転載方法
 - Wordpressのサイトヘッダー、サイトフッターが有効になります。
@@ -31,8 +32,11 @@
 - git clone https://github.com/nanakochi123456/covid19-checker.git
 - Wordpressのテーマディレクトリに wordpress/page-covid19-checker.php にある内容を転送します。
 - 固定ページで「新型コロナウイルス受診ナビ」という名称のページを作成します。
-- パーマリンクを「covid19」とします
+- パーマリンクを「covid19」とします https://hogehoge/covid19 として公開されます。
+- 記事は空欄のままとします。
 - テンプレートで coivd19-checker を選択します。
+- SEOプラグイン類が導入されている場合、サイトの説明を記載します。
+- どの方法でも良いので、jquery を includeされた状態にします。
 - Wordpressのルート/coivd19-checker のディレクトリで crontabでgit pull をします。高頻度で更新しているので1～2時間毎が最適。
 
 # 以下につきましてはいい加減な実装となっています。
