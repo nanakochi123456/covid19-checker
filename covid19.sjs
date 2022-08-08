@@ -7,7 +7,49 @@
 $(function() {
 	"use strict";
 	var HTML='.covid19',
-		CHECK='covid19check';
+		CHECK='covid19check',
+
+covid19_title='<h1 class="coivd19"><span>新型コロナウイルス受診ナビ</span></h1><p>受診が必要か、緊急搬送が必要か簡単な問診でお答えします。</p><p>感染者が1日20万人超えとなっており、念のため検査したい、心配で検査したい等のような方で特に発熱外来が過大に医療ひっ迫している状態です。ご協力をお願いします。</p>',
+
+/* 以下は変更禁止 */
+covid19_footer='<p>本ウェブサイトのうち新型コロナウイルス受診ナビは個人、法人、団体関わらず無断転載歓迎です。詳細は<a href="https://github.com/nanakochi123456/covid19-checker">github</a>まで</p><p>この簡易診断サイトは統計データに基づき作成されたもので、医師並びに医療従事者が監修を行っていません。ただし一部の内容につきましては現役フリーランスの内科医の方に確認を受けています。</p><p>統計データの入手元につきましては<a href="https://github.com/nanakochi123456/covid19-checker/blob/main/covid19.sjs">ソースコード</a>に記載されています。</p><p>この結果につきましては診断を行った行為とはならず、あくまで利用者の参考情報として提供しています。</p><p>すべての統計データが網羅されていないため、重症化率に限り正しく計算されないことがあります。</p><p>当フォームに入力された内容はサーバー並びにcookie等に保管されません。</p><p>本簡易診断は日本国内の実態に基づいて作成しています。</p><p>&nbsp;&</p><p>&copy;<a href="https://neet.co.jp/">NEET Co.,Ltd.</a> All Right Reserved.</p><p>This is open source. <a href="https://github.com/nanakochi123456/covid19-checker">github source</a> <a href="https://www.gnu.org/licenses/gpl-3.0.ja.html">GPL3</a> <a href="https://blog.neet.co.jp/contact/">Contact</a></p>',
+	/* /以上変更禁止 */
+
+/* 救急 */
+covid19_kyukyu='あなたは緊急の状態です。ただちに <a href="tel:119">119</a>に電話の上治療してもらうことをお薦めします。<br>なお、ただいま病院はひっ迫していますのですぐに受け入れ先の病院がすぐに決まるとは限りません。<br><br>',
+
+/* 抗原検査キットの結果不明等 */
+covid19_noresult = 'あなたは受診の必要はあります。<br>もう一度抗原検査キットを試してみて、もしだめなら…<br>もしくは抗原検査キットの使用方法がわからなければ、医療機関に検査を依頼しましょう。<br><br>「かかりつけ医」か「近くの医療機関」に電話連絡した上で、抗原検査キットの使い方がわからない旨も連絡し、検査してもらうことをお薦めします。<br>連絡なしに直接医療機関にかかることはお避け下さい。<br>無症状かつ濃厚接触の疑いがある場合は、自治体や街の無料PCR検査を活用しましょう。<br><br>',
+
+/* 東京都向け案内 */
+covid19_tokyo='東京都居住の方は<a href="https://www.fukushihoken.metro.tokyo.lg.jp/iryo/kansen/corona_portal/shien/youseitouroku.html">東京都陽性者登録センター</a>をご利用ください。抗原検査キットも配布してもらえます。<br><br>',
+
+/* 大阪府向け案内 */
+covid19_osaka = '大阪府居住の方は<a href="https://www.pref.osaka.lg.jp/kansenshoshien/jitaku_ryouyou/index.html">若年軽症者オンライン診療スキーム</a>をご利用下さい。<br><br>',
+
+/* 受診不要 */
+covid19_negative = 'あなたは受診の必要はないと思われます。<br>検査や薬の為に受診することは避けましょう。<br>総合的に他の症状との考慮を行い、全くなければ検査や薬の為に受診することは避けましょう。<br><br>オミクロン株では順調に経過すれば風邪とは大きな違いはなく、自分の免疫だけで治すことができます。このページを毎日チェックして簡易問診をしてみましょう。<br>しかし、最近では若年層の方が軽症でも死亡されるケースがございます。ちょっとした異変でも感じられましたらすぐに<a href="tel:119">119</a>をするようにしましょう。<br><br>感染拡大に伴い宿泊療養のホテルは満床近いケースがあります。可能な限りご自宅で家庭内感染をしないよう工夫をしながら療養するようにしましょう。<br><br>',
+
+/* 要受診 (10歳未満の陰性含む=RSウイルスの可能性もあるので） */
+covid19_positive='あなたは受診の必要はあります。<br>早急に「かかりつけ医」か「近くの医療機関」に電話連絡した上で、診断してもらうことをお薦めします。<br>連絡なしに直接医療機関にかかることはお避け下さい。<br><br>',
+
+/* RSウイルス */
+covid19_rsvirus='なお、新型コロナと思っていたら風邪やコロナに症状の類似しているRSウイルスの可能性もあります。<br><br>',
+
+/* 未成年はカロナール */
+covid19_miners='発熱を抑える為に<a href="' + covid19items['calonal'] + '" rel="nofollow">カロナール</a>（アセトアミノフェン）を準備するとよいでしょう。<br><br>',
+
+/* 成人はロキソ、イブ */
+covid19_adults='発熱を抑える為に<a href="' + covid19items['loxonin'] + '" rel="nofollow">ロキソニン</a>（ロキソプロフェン）、<a href="' + covid19items['eve'] + '" rel="nofollow">イブ</a>（イブプロフェン）を準備するとよいでしょう。<br><br>',
+
+/* パルスオキシメーター */
+covid19_pulse='重症化リスクも高くなる可能性もありますので、酸素飽和度を計測する<a href="' + covid19items['pulse_oximeter'] + '" rel="nofollow">パルスオキシメーター</a>も準備しましょう。<br>パルスオキシメーターの値が95%以下になったら迷わず<a href="tel:119">119</a>をしてください。<br><br>',
+
+/* 20代以下警告メッセージ */
+covid19_risk='20代以下の方の重症化リスク、死亡リスクが増えています。普段から熱中症並びにコロナを意識した行動を行うようにしましょう。<br><br>',
+
+/* 最後の説明 */
+covid19_last='念のために、いつでもコロナかな？と感じられた時のために、<a href="' + covid19items['kougen_check'] + '" rel="nofollow">抗原検査キット</a>を手元に用意しておきましょう。ただし3か月以上を超えると使用できなくなる可能性がありますので、適時用意しておきましょう。<br><br>陰性証明が必要であれば<a href="' + covid19items['pcr_check'] + '">PCR検査</a>を検討しましょう。<br><br>これ以外に不安なことがありましたら、かかりつけ医、もしくはかかりつけ薬局に電話で連絡されるか、<a href="https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kenkou_iryou/covid19-kikokusyasessyokusya.html">新型コロナウイルスに関する相談・医療の情報や受診・相談センターの連絡先</a>（厚生労働省）に相談されるか、以下のようなサービスに相談してみて下さい。<br><ul><li><a href="https://byoinnavi.drsquare.jp/">医療なび医療相談サービス（無償）</a>（株式会社eヘルスケア）</li><li><a href="https://www.hospita.jp/bbs/">ホスピタ（無償）</a>（株式会社イーエックス・パートナーズ）</li><li><a href="https://www.askdoctors.jp/">アスクドクターズ（無償）</a>（エムスリー株式会社）</li><li><a href="https://doctor.goo.ne.jp/">gooドクター（有償）</a>（エヌ・ティ・ティレゾナント株式会社）</li><li><a href="https://health.docomo.ne.jp/apps/health/firstcall">dヘルスケア first call（有償）</a> （株式会社NTTドコモ）</li><li><a href="https://www.pocketdoctor.jp/">ポケットドクター（有償）</a>（株式会社オプティム）</li><li><a href="https://medicalnote-qa.jp/">メディカルノート（有償）</a>（株式会社メディカルノート）</li><li><a href="https://doctor.line.me/">LINEドクター（有償）</a>（LINEヘルスケア株式会社）</li><li><a href="https://yomidr.yomiuri.co.jp/iryo-sodan/">ヨミドクター（読売新聞購読者限定）</a>（株式会社読売新聞東京本社）</li><li><a href="https://www.secom-sonpo.co.jp/ohtsuka/hotline.html">セコム損保のドクターホットラインサービス（大塚グループ団体保険加入者向け）</a> （セコム損害保険株式会社）</li><li><a href="https://www.justanswer.jp/">ジャストアンサー（有償）</a></li></ul>それでは、お大事にどうぞ。';
 
 	// フォームの表示
 	load_covid19form();
@@ -109,59 +151,42 @@ $(function() {
 
 			// 救急搬送が最優先判定
 			if(kyukyu > 0) {
-				result += 'あなたは緊急の状態です。ただちに <a href="tel:119">119</a>に電話の上治療してもらうことをお薦めします。<br>';
-				result += 'なお、ただいま病院はひっ迫していますのですぐに受け入れ先の病院がすぐに決まるとは限りません。<br>';
-				result += '<br>';
+				result += covid19_kyukyu;
+
 
 			// 抗原検査キットの値が不明
 			} else if(kougen[0] == 1) {
-				result += "あなたは受診の必要はあります。<br>";
-				result += "もう一度抗原検査キットを試してみて、もしだめなら…<br>もしくは抗原検査キットの使用方法がわからなければ、医療機関に検査を依頼しましょう。<br>";
-				result += '<br>';
-				result += "「かかりつけ医」か「近くの医療機関」に電話連絡した上で、抗原検査キットの使い方がわからない旨も連絡し、検査してもらうことをお薦めします。<br>連絡なしに直接医療機関にかかることはお避け下さい。<br>";
-				result += "無症状かつ濃厚接触の疑いがある場合は、自治体や街の無料PCR検査を活用しましょう。<br>";
-				result += '<br>';
+				result += covid19_noresult;
 
 
 				/* 東京都対応 */
 				if(kyukyu == 0 && year[3] == 20 && sex[3] < 3) {
-					result += '東京都居住の方は<a href="https://www.fukushihoken.metro.tokyo.lg.jp/iryo/kansen/corona_portal/shien/youseitouroku.html">東京都陽性者登録センター</a>をご利用ください。抗原検査キットも配布してもらえます。<br>';
-					result += '<br>';
+					result += covid19_tokyo;
 				}
 				/* 大阪府対応 */
 				if(kyukyu == 0 && year[3] <= 40 && sex[3] < 3) {
-					result += '大阪府居住の方は<a href="https://www.pref.osaka.lg.jp/kansenshoshien/jitaku_ryouyou/index.html">若年軽症者オンライン診療スキーム</a>をご利用下さい。<br>';
-					result += '<br>';
+					result += covid19_osaka;
 				}
+			/* 受診不要 */
 			} else 	if(jusin + kyukyu == 0) {
-				result += "あなたは受診の必要はないと思われます。<br>";
-				result += "検査や薬の為に受診することは避けましょう。<br>";
-				result += "総合的に他の症状との考慮を行い、全くなければ検査や薬の為に受診することは避けましょう。<br>";
-				result += '<br>';
-				result += 'オミクロン株では順調に経過すれば風邪とは大きな違いはなく、自分の免疫だけで治すことができます。このページを毎日チェックして簡易問診をしてみましょう。<br>しかし、最近では若年層の方が軽症でも死亡されるケースがございます。ちょっとした異変でも感じられましたらすぐに<a href="tel:119">119</a>をするようにしましょう。<br>';
-				result += '<br>';
-				result += "感染拡大に伴い宿泊療養のホテルは満床近いケースがあります。可能な限りご自宅で家庭内感染をしないよう工夫をしながら療養するようにしましょう。<br>";
-				result += '<br>';
+				result += covid19_negative;
 
 				/* 東京都対応 */
 				if(kyukyu == 0 && year[3] == 20 && sex[3] < 3) {
-					result += '東京都居住の方は<a href="https://www.fukushihoken.metro.tokyo.lg.jp/iryo/kansen/corona_portal/shien/youseitouroku.html">東京都陽性者登録センター</a>をご利用ください。抗原検査キットも配布してもらえます。<br>';
-					result += '<br>';
+					result += covid19_tokyo;
 				}
 
 				/* 大阪府対応 */
 				if(kyukyu == 0 && year[3] <= 40 && sex[3] < 3) {
-					result += '大阪府居住の方は<a href="https://www.pref.osaka.lg.jp/kansenshoshien/jitaku_ryouyou/index.html">若年軽症者オンライン診療スキーム</a>をご利用下さい。<br>';
-					result += '<br>';
+					result += covid19_osaka;
 				}
+			/* 要受診 */
 			} else if(jusin > 0 && kyukyu == 0) {
-				result += "あなたは受診の必要はあります。<br>早急に「かかりつけ医」か「近くの医療機関」に電話連絡した上で、診断してもらうことをお薦めします。<br>連絡なしに直接医療機関にかかることはお避け下さい。<br>";
-				result += '<br>';
+				result += covid19_positive;
 
 				// RSウイルス
 				if(year[3] < 10) {
-					result += "なお、新型コロナと思っていたら風邪やコロナに症状の類似しているRSウイルスの可能性もあります。<br>";
-					result += '<br>';
+					result += covid19_rsvirus;
 				}
 			}
 			result += '参考までに、あなたの重症化リスクは健康な成人30代女性（血液型O型、飲酒喫煙なし、妊娠なし）のおよそ' + jusyo + '倍です。<br>';
@@ -169,39 +194,24 @@ $(function() {
 
 			if(year[3] < 20) {
 				// 未成年の場合カロナール
-				result += '発熱を抑える為に<a href="https://px.a8.net/svt/ejp?a8mat=1U3OQS+5R7ZF6+249K+BWGDT&a8ejpredirect=https%3A%2F%2Fwww.amazon.co.jp%2Fs%3Fk%3D%25E3%2582%25AB%25E3%2583%25AD%25E3%2583%258A%25E3%2583%25BC%25E3%2583%25AB%26__mk_ja_JP%3D%25E3%2582%25AB%25E3%2582%25BF%25E3%2582%25AB%25E3%2583%258A%26ref%3Dnb_sb_noss%26tag%3Da8-affi-315334-22" rel="nofollow">カロナール</a>（アセトアミノフェン）を準備するとよいでしょう。<br>';
+				result += covid19_miners;
+
+
 			} else {
 				// そうでない場合ロキソニンプレミアム、イブ
-				result += '発熱を抑える為に<a href="https://px.a8.net/svt/ejp?a8mat=1U3OQS+5R7ZF6+249K+BWGDT&a8ejpredirect=https%3A%2F%2Fwww.amazon.co.jp%2Fs%3Fk%3D%25E3%2583%25AD%25E3%2582%25AD%25E3%2582%25BD%25E3%2583%258B%25E3%2583%25B3%25E3%2583%2597%25E3%2583%25AC%25E3%2583%259F%25E3%2582%25A2%25E3%2583%25A0%26__mk_ja_JP%3D%25E3%2582%25AB%25E3%2582%25BF%25E3%2582%25AB%25E3%2583%258A%26crid%3DFKXS0U0DUYEB%26sprefix%3D%25E3%2583%25AD%25E3%2582%25AD%25E3%2582%25BD%25E3%2583%258B%25E3%2583%25B3%25E3%2583%2597%25E3%2583%25AC%25E3%2583%259F%25E3%2582%25A2%25E3%2583%25A0%252Caps%252C168%26ref%3Dnb_sb_noss_1%26tag%3Da8-affi-315334-22" rel="nofollow">ロキソニン</a>（ロキソプロフェン）、<a href="https://px.a8.net/svt/ejp?a8mat=1U3OQS+5R7ZF6+249K+BWGDT&a8ejpredirect=https%3A%2F%2Fwww.amazon.co.jp%2Fs%3Fk%3D%25E3%2582%25A4%25E3%2583%2596%26__mk_ja_JP%3D%25E3%2582%25AB%25E3%2582%25BF%25E3%2582%25AB%25E3%2583%258A%26crid%3DTIBV5UW1M7I1%26sprefix%3D%25E3%2582%25A4%25E3%2583%2596%252Caps%252C207%26ref%3Dnb_sb_noss_1%26tag%3Da8-affi-315334-22" rel="nofollow">イブ</a>（イブプロフェン）を準備するとよいでしょう。<br>';
+				result += covid19_adults;
 			}
 
 			// 40歳以上パルスオキシメーター＆多分jusyo>20
 			if(year[3] >= 40 || jusyo > 20) {
-				result += '重症化リスクも高くなる可能性もありますので、酸素飽和度を計測する<a href="https://px.a8.net/svt/ejp?a8mat=1U3OQS+5R7ZF6+249K+BWGDT&a8ejpredirect=https%3A%2F%2Fwww.amazon.co.jp%2Fs%3Fk%3D%25E3%2583%2591%25E3%2583%25AB%25E3%2582%25B9%25E3%2582%25AA%25E3%2582%25AD%25E3%2582%25B7%25E3%2583%25A1%25E3%2583%25BC%25E3%2582%25BF%25E3%2583%25BC%26__mk_ja_JP%3D%25E3%2582%25AB%25E3%2582%25BF%25E3%2582%25AB%25E3%2583%258A%26crid%3D30PSSI9Z0GHVV%26sprefix%3D%25E3%2583%2591%25E3%2583%25AB%25E3%2582%25B9%25E3%2582%25AA%25E3%2582%25AD%25E3%2582%25B7%25E3%2583%25A1%25E3%2583%25BC%25E3%2582%25BF%25E3%2583%25BC%252Caps%252C156%26ref%3Dnb_sb_noss_1%26tag%3Da8-affi-315334-22" rel="nofollow">パルスオキシメーター</a>も準備しましょう。<br>パルスオキシメーターの値が95%以下になったら迷わず<a href="tel:119">119</a>をしてください。';
+				result += covid19_pulse;
 			}
 
 			// 20代以下重症化リスク BA.5で増えているらしいので
 			if(year[3] <= 20) {
-				result += '20代以下の方の重症化リスク、死亡リスクが増えています。普段から熱中症並びにコロナを意識した行動を行うようにしましょう。<br>';
+				result += covid19_risk;
 			}
-			result += '<br>';
-			result += 'これ以外に不安なことがありましたら、かかりつけ医、もしくはかかりつけ薬局に電話で連絡されるか、<a href="https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kenkou_iryou/covid19-kikokusyasessyokusya.html">新型コロナウイルスに関する相談・医療の情報や受診・相談センターの連絡先</a>（厚生労働省）に相談されるか、以下のようなサービスに相談してみて下さい。<br>';
-			result += '<ul>';
-			result += '<li><a href="https://byoinnavi.drsquare.jp/">医療なび医療相談サービス（無償）</a>（株式会社eヘルスケア）</li>';
-			result += '<li><a href="https://www.hospita.jp/bbs/">ホスピタ（無償）</a>（株式会社イーエックス・パートナーズ）</li>';
-			result += '<li><a href="https://www.askdoctors.jp/">アスクドクターズ（無償）</a>（エムスリー株式会社）</li>';
-			result += '<li><a href="https://doctor.goo.ne.jp/">gooドクター（有償）</a>（エヌ・ティ・ティレゾナント株式会社）</li>';
-			result += '<li><a href="https://health.docomo.ne.jp/apps/health/firstcall">dヘルスケア first call（有償）</a> （株式会社NTTドコモ）</li>';
-			result += '<li><a href="https://www.pocketdoctor.jp/">ポケットドクター（有償）</a>（株式会社オプティム）</li>';
-			result += '<li><a href="https://medicalnote-qa.jp/">メディカルノート（有償）</a>（株式会社メディカルノート）</li>';
-			result += '<li><a href="https://doctor.line.me/">LINEドクター（有償）</a>（LINEヘルスケア株式会社）</li>';
-			result += '<li><a href="https://yomidr.yomiuri.co.jp/iryo-sodan/">ヨミドクター（読売新聞購読者限定）</a>（株式会社読売新聞東京本社）</li>';
-			result += '<li><a href="https://www.secom-sonpo.co.jp/ohtsuka/hotline.html">セコム損保のドクターホットラインサービス（大塚グループ団体保険加入者向け）</a> （セコム損害保険株式会社）</li>';
-
-
-			result += '<li><a href="https://www.justanswer.jp/">ジャストアンサー（有償）</a></li>';
-			result += '</ul>';
-			result += 'それでは、お大事にどうぞ。';
+			result += covid19_last;
 		}
 		$('.result').html(result);
 
@@ -334,10 +344,7 @@ $(function() {
 		var _html="";
 
 		$(HTML).html('');
-		$(HTML).append('<h1 class="coivd19"><span>新型コロナウイルス受診ナビ</span></h1>');
-		$(HTML).append('<p>受診が必要か、緊急搬送が必要か簡単な問診でお答えします。</p>');
-		$(HTML).append('<p>感染者が1日20万人超えとなっており、念のため検査したい、心配で検査したい等のような方で特に発熱外来が過大に医療ひっ迫している状態です。ご協力をお願いします。</p>');
-
+		$(HTML).append(covid19_title);
 
 		$(HTML).append('<form id="' + CHECK + '">');
 
@@ -519,20 +526,9 @@ $(function() {
 	}
 	// <以下変更禁止> footer　（本来のfooterはこの下に表示されます）
 	function load_covid19footer() {	
-		var _html="";
-		_html+='<div class="coivd19">';
-		_html+='<p>本ウェブサイトのうち新型コロナウイルス受診ナビは個人、法人、団体関わらず無断転載歓迎です。詳細は<a href="https://github.com/nanakochi123456/covid19-checker">github</a>まで</p>';
-		_html+='<p>この簡易診断サイトは統計データに基づき作成されたもので、医師並びに医療従事者が監修を行っていません。ただし一部の内容につきましては現役フリーランスの内科医の方に確認を受けています。</p>';
-		_html+='<p>統計データの入手元につきましては<a href="https://github.com/nanakochi123456/covid19-checker/blob/main/covid19.sjs">ソースコード</a>に記載されています。</p>';
-		_html+='<p>この結果につきましては診断を行った行為とはならず、あくまで利用者の参考情報として提供しています。</p>';
-		_html+='<p>すべての統計データが網羅されていないため、重症化率に限り正しく計算されないことがあります。</p>';
-		_html+='<p>当フォームに入力された内容はサーバー並びにcookie等に保管されません。</p>';
-		_html+='<p>本簡易診断は日本国内の実態に基づいて作成しています。</p>';
-		_html+='<br>';
-		_html+='<p>&copy;<a href="https://neet.co.jp/">NEET Co.,Ltd.</a> All Right Reserved.</p>';
-		_html+='<p>This is open source. <a href="https://github.com/nanakochi123456/covid19-checker">github source</a> <a href="https://www.gnu.org/licenses/gpl-3.0.ja.html">GPL3</a> <a href="https://blog.neet.co.jp/contact/">Contact</a></p>';
-		_html+='<hr>';
-		_html+='</div>';
+		var _html='<div class="coivd19">';
+		var _html=covid19_footer;
+		_html+='<hr></div>';
 
 		// 本来のfooterをバックアップを取り一度全削除し、本来のfooterをcovid19-checkerのfooterの下に設置する
 		var originalfooter=$('footer').html();

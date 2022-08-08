@@ -28,8 +28,8 @@ covid19.html: covid19-src.html covid19.sjs covid19.scss covid19-html.scss covid1
 	${HTMLMAKER}
 
 
-${DIST}/covid19.min.js: covid19.sjs
-	cat covid19.sjs > ${DIST}/covid19.js
+${DIST}/covid19.min.js: covid19.sjs medicalitems.sjs
+	cat medicalitems.sjs covid19.sjs > ${DIST}/covid19.js
 	${UTF16} ${DIST}/covid19.js ${TEMP}/covid19.min.js.tmp1
 	${UGLIFYJS} ${TEMP}/covid19.min.js.tmp1 > ${TEMP}/covid19.min.js.tmp2
 	${JSPACKER} ${TEMP}/covid19.min.js.tmp2 > ${TEMP}/covid19.min.js.tmp3
