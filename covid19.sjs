@@ -160,7 +160,7 @@ covid19_last='念のために、いつでもコロナかな？と感じられた
 
 
 				/* 東京都対応 */
-				if(kyukyu == 0 && year[3] == 20 && sex[3] < 3) {
+				if(kyukyu == 0 && (year[3] == 20 || year[3] == 30) && sex[3] < 3) {
 					result += covid19_tokyo;
 				}
 				/* 大阪府対応 */
@@ -172,7 +172,7 @@ covid19_last='念のために、いつでもコロナかな？と感じられた
 				result += covid19_negative;
 
 				/* 東京都対応 */
-				if(kyukyu == 0 && year[3] == 20 && sex[3] < 3) {
+				if(kyukyu == 0 && (year[3] == 20 || year[3] == 30) && sex[3] < 3) {
 					result += covid19_tokyo;
 				}
 
