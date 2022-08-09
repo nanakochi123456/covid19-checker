@@ -22,4 +22,5 @@ wp_enqueue_script('covid19',
 get_header();
 ?>
 <section class="covid19"></section>
+
 <?php get_footer(); ?>
