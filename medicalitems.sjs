@@ -22,6 +22,7 @@ var covid19items={
 
 	// PCR検査（あくまで念のため用）
 	// PCR検査キットはこちらに記載
+	// 自分で検査完結するものは紹介禁止
 	'pcr_check': 'https://px.a8.net/svt/ejp?a8mat=3N62HK+2P2KSI+2YGS+HV7V6',
 
 };
