@@ -528,7 +528,7 @@ covid19_last='念のために、いつでもコロナかな？と感じられた
 	function load_covid19footer() {	
 		var _html='<div class="coivd19">';
 		var _html=covid19_footer;
-		_html+='<hr></div>';
+		_html+='</div><hr>';
 
 		// 本来のfooterをバックアップを取り一度全削除し、本来のfooterをcovid19-checkerのfooterの下に設置する
 		var originalfooter=$('footer').html();
