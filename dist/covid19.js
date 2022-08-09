@@ -4,6 +4,7 @@
 var covid19items={
 
 	// カロナール（アセトアミノフェン）
+	// 全年代で使用できるものの、在庫が非常に少ないために未成年に限定する
 	'calonal': 'https://px.a8.net/svt/ejp?a8mat=1U3OQS+5R7ZF6+249K+BWGDT&a8ejpredirect=https%3A%2F%2Fwww.amazon.co.jp%2Fs%3Fk%3D%25E3%2582%25AB%25E3%2583%25AD%25E3%2583%258A%25E3%2583%25BC%25E3%2583%25AB%26__mk_ja_JP%3D%25E3%2582%25AB%25E3%2582%25BF%25E3%2582%25AB%25E3%2583%258A%26ref%3Dnb_sb_noss%26tag%3Da8-affi-315334-22',
 
 	// ロキソニンプレミアム（胃薬内臓のが良いはず）
