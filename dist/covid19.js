@@ -554,7 +554,7 @@ covid19_last='念のために、いつでもコロナかな？と感じられた
 	// <以下変更禁止> footer　（本来のfooterはこの下に表示されます）
 	function load_covid19footer() {	
 		var _html='<div class="coivd19">';
-		var _html=covid19_footer;
+		_html+=covid19_footer;
 		_html+='</div><hr>';
 
 		// 本来のfooterをバックアップを取り一度全削除し、本来のfooterをcovid19-checkerのfooterの下に設置する
