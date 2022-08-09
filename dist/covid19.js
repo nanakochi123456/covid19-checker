@@ -1,5 +1,5 @@
 // アフィリエイト可能な薬、アイテム等
-// できる限り特定1アイテムではなく、商品リストページの検索ヒットページを掲載するのが望ましいです
+// できる限り、売り切れになりにくいようにするため、特定1アイテムではなく、商品リストページの検索ヒットページを掲載するのが望ましいです
 
 var covid19items={
 
@@ -49,7 +49,7 @@ covid19_kyukyu='あなたは緊急の状態です。ただちに <a href="tel:11
 covid19_noresult = 'あなたは受診の必要はあります。<br>もう一度抗原検査キットを試してみて、もしだめなら…<br>もしくは抗原検査キットの使用方法がわからなければ、医療機関に検査を依頼しましょう。<br><br>「かかりつけ医」か「近くの医療機関」に電話連絡した上で、抗原検査キットの使い方がわからない旨も連絡し、検査してもらうことをお薦めします。<br>連絡なしに直接医療機関にかかることはお避け下さい。<br>無症状かつ濃厚接触の疑いがある場合は、自治体や街の無料PCR検査を活用しましょう。<br><br>',
 
 /* 東京都向け案内 */
-covid19_tokyo='東京都居住の方は<a href="https://www.fukushihoken.metro.tokyo.lg.jp/iryo/kansen/corona_portal/shien/youseitouroku.html">東京都陽性者登録センター</a>をご利用ください。抗原検査キットも配布してもらえます。<br><br>',
+covid19_tokyo='東京都居住の方は<a href="https://www.fukushihoken.metro.tokyo.lg.jp/iryo/kansen/corona_portal/shien/youseitouroku.html">東京都陽性者登録センター</a>をご利用ください。医療用抗原検査キットも配布してもらえます。<br><br>',
 
 /* 大阪府向け案内 */
 covid19_osaka = '大阪府居住の方は<a href="https://www.pref.osaka.lg.jp/kansenshoshien/jitaku_ryouyou/index.html">若年軽症者オンライン診療スキーム</a>をご利用下さい。<br><br>',
@@ -76,7 +76,7 @@ covid19_pulse='重症化リスクも高くなる可能性もありますので�
 covid19_risk='20代以下の方の重症化リスク、死亡リスクが増えています。普段から熱中症並びにコロナを意識した行動を行うようにしましょう。<br><br>',
 
 /* 最後の説明 */
-covid19_last='念のために、いつでもコロナかな？と感じられた時のために、<a href="' + covid19items['kougen_check'] + '" rel="nofollow">抗原検査キット</a>を手元に用意しておきましょう。ただし3か月以上を超えると使用できなくなる可能性がありますので、適時用意しておきましょう。<br><br>陰性証明が必要であれば<a href="' + covid19items['pcr_check'] + '">PCR検査</a>を検討しましょう。<br><br>これ以外に不安なことがありましたら、かかりつけ医、もしくはかかりつけ薬局に電話で連絡されるか、<a href="https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kenkou_iryou/covid19-kikokusyasessyokusya.html">新型コロナウイルスに関する相談・医療の情報や受診・相談センターの連絡先</a>（厚生労働省）に相談されるか、以下のようなサービスに相談してみて下さい。<br><ul><li><a href="https://byoinnavi.drsquare.jp/">医療なび医療相談サービス（無償）</a>（株式会社eヘルスケア）</li><li><a href="https://www.hospita.jp/bbs/">ホスピタ（無償）</a>（株式会社イーエックス・パートナーズ）</li><li><a href="https://www.askdoctors.jp/">アスクドクターズ（無償）</a>（エムスリー株式会社）</li><li><a href="https://doctor.goo.ne.jp/">gooドクター（有償）</a>（エヌ・ティ・ティレゾナント株式会社）</li><li><a href="https://health.docomo.ne.jp/apps/health/firstcall">dヘルスケア first call（有償）</a> （株式会社NTTドコモ）</li><li><a href="https://www.pocketdoctor.jp/">ポケットドクター（有償）</a>（株式会社オプティム）</li><li><a href="https://medicalnote-qa.jp/">メディカルノート（有償）</a>（株式会社メディカルノート）</li><li><a href="https://doctor.line.me/">LINEドクター（有償）</a>（LINEヘルスケア株式会社）</li><li><a href="https://yomidr.yomiuri.co.jp/iryo-sodan/">ヨミドクター（読売新聞購読者限定）</a>（株式会社読売新聞東京本社）</li><li><a href="https://www.secom-sonpo.co.jp/ohtsuka/hotline.html">セコム損保のドクターホットラインサービス（大塚グループ団体保険加入者向け）</a> （セコム損害保険株式会社）</li><li><a href="https://www.justanswer.jp/">ジャストアンサー（有償）</a></li></ul>それでは、お大事にどうぞ。';
+covid19_last='念のために、いつでもコロナかな？と感じられた時のために、<a href="' + covid19items['kougen_check'] + '" rel="nofollow">抗原検査キット</a>を手元に用意しておきましょう。<br>（ただし現状販売されているものは研究用で、医療用ではございません。）<br>ただし3か月以上を超えると使用できなくなる可能性がありますので、適時用意しておきましょう。<br><br>陰性証明が必要であれば<a href="' + covid19items['pcr_check'] + '">PCR検査</a>を検討しましょう。<br><br>これ以外に不安なことがありましたら、かかりつけ医、もしくはかかりつけ薬局に電話で連絡されるか、<a href="https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kenkou_iryou/covid19-kikokusyasessyokusya.html">新型コロナウイルスに関する相談・医療の情報や受診・相談センターの連絡先</a>（厚生労働省）に相談されるか、以下のようなサービスに相談してみて下さい。<br><ul><li><a href="https://byoinnavi.drsquare.jp/">医療なび医療相談サービス（無償）</a>（株式会社eヘルスケア）</li><li><a href="https://www.hospita.jp/bbs/">ホスピタ（無償）</a>（株式会社イーエックス・パートナーズ）</li><li><a href="https://www.askdoctors.jp/">アスクドクターズ（無償）</a>（エムスリー株式会社）</li><li><a href="https://doctor.goo.ne.jp/">gooドクター（有償）</a>（エヌ・ティ・ティレゾナント株式会社）</li><li><a href="https://health.docomo.ne.jp/apps/health/firstcall">dヘルスケア first call（有償）</a> （株式会社NTTドコモ）</li><li><a href="https://www.pocketdoctor.jp/">ポケットドクター（有償）</a>（株式会社オプティム）</li><li><a href="https://medicalnote-qa.jp/">メディカルノート（有償）</a>（株式会社メディカルノート）</li><li><a href="https://doctor.line.me/">LINEドクター（有償）</a>（LINEヘルスケア株式会社）</li><li><a href="https://yomidr.yomiuri.co.jp/iryo-sodan/">ヨミドクター（読売新聞購読者限定）</a>（株式会社読売新聞東京本社）</li><li><a href="https://www.secom-sonpo.co.jp/ohtsuka/hotline.html">セコム損保のドクターホットラインサービス（大塚グループ団体保険加入者向け）</a> （セコム損害保険株式会社）</li><li><a href="https://www.justanswer.jp/">ジャストアンサー（有償）</a></li></ul>それでは、お大事にどうぞ。';
 
 	// フォームの表示
 	load_covid19form();
