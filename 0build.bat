@@ -2,7 +2,7 @@
 
 echo on
 
-wsl make -f Makefile -j 16
+wsl bash 0make.sh
 pause
 
 git commit -a
