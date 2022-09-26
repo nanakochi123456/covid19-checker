@@ -33,7 +33,7 @@ var covid19items={
 };
 /* covid19 easy checker (ja) by nano (C)NEET.co.,ltd */
 /* License GPL3 https://www.gnu.org/licenses/gpl-3.0.ja.html */
-/* Release 220805-r1 */
+/* Release 220927-r1 */
 /* Kanjicode = UTF-8 */
 /* 1TAB=4Space */
 
